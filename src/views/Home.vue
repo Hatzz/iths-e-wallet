@@ -1,8 +1,15 @@
 <template>
-  <div class="home">
+  <main>
     <h1>Hello world</h1>
-    <Card vendor="bitcoin" name="Elias Lundgren" date="12/32" number="1255 5678 9123 4567"/>
-  </div>
+    <Card
+      v-for="card in this.$root.cards"
+      :number="card.number"
+      :name="card.name"
+      :date="card.date"
+      :vendor="card.vendor"
+      :key="card.number"
+    />
+  </main>
 </template>
 
 <script>
@@ -17,5 +24,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

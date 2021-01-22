@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Hello world</h1>
-    <Card/>
+    <Card vendor="bitcoin" name="Elias Lundgren" date="12/32" number="1234 5678 9123 4567"/>
   </div>
 </template>
 

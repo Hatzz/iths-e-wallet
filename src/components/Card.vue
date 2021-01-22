@@ -1,14 +1,13 @@
 <template>
-  <div class="card">
+  <div :class="`card ${vendor}`">
     <div class="chip">
-      <img src="../assets/chip-dark.svg" alt="Card chip" />
+      <img
+        :src="require(`../assets/chip-${this.vendorStyles[vendor].chipTone}.svg`)"
+        alt="Card chip"
+      />
     </div>
     <div class="vendor">
-      <img
-        src="../assets/vendor-bitcoin.svg"
-        alt="Bitcoin vendor"
-        class="vendor"
-      />
+      <img :src="require(`../assets/vendor-${vendor}.svg`)" />
     </div>
 
     <div class="card-number">
@@ -19,17 +18,59 @@
     </div>
     <div class="card-holder">
       <h5>CARDHOLDER NAME</h5>
-      <h3>Elias Lundgren</h3>
+      <h3>{{ name }}</h3>
     </div>
     <div class="valid-thru">
       <h5>VALID THRU</h5>
-      <h3>12/22</h3>
+      <h3>{{ date }}</h3>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    vendor: {
+      type: String,
+      default: 'none'
+    },
+    name: {
+      type: String
+    },
+    date: {
+      type: String
+    },
+    number: {
+      type: String
+    }
+  },
+  data () {
+    return {
+      vendorStyles: {
+        bitcoin: {
+          icon: 'vendor-bitcoin.svg',
+          chipTone: 'dark'
+        },
+        none: {
+          icon: '',
+          chipTone: 'light'
+        },
+        ninja: {
+          icon: 'vendor-ninja.svg',
+          chipTone: 'light'
+        },
+        blockchain: {
+          icon: 'vendor-blockchain.svg',
+          chipTone: 'light'
+        },
+        evil: {
+          icon: 'vendor-evil.svg',
+          chipTone: 'light'
+        }
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -46,7 +87,6 @@ h5 {
   height: 15.45rem;
   padding: 1.5rem 1rem;
   border-radius: 0.5rem;
-  background: goldenrod;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   display: grid;
@@ -54,6 +94,31 @@ h5 {
     "top-left top-right"
     "middle middle"
     "bottom-left bottom-right";
+}
+
+.bitcoin {
+  background: goldenrod;
+  color: black;
+}
+
+.none, .blockchain, .ninja, .evil {
+  color: white;
+}
+
+.none {
+  background: grey;
+}
+
+.blockchain {
+  background: purple;
+}
+
+.ninja {
+  background: black;
+}
+
+.evil {
+  background: red;
 }
 
 .chip,

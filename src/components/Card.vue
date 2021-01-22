@@ -11,10 +11,9 @@
     </div>
 
     <div class="card-number">
-      <h2>1232</h2>
-      <h2>5678</h2>
-      <h2>9123</h2>
-      <h2>2567</h2>
+      <h2 v-for="num in numberArray" :key="num">
+        {{ num }}
+      </h2>
     </div>
     <div class="card-holder">
       <h5>CARDHOLDER NAME</h5>
@@ -41,7 +40,13 @@ export default {
       type: String
     },
     number: {
-      type: String
+      type: String,
+      default: 'XXXX XXXX XXXX XXXX'
+    }
+  },
+  computed: {
+    numberArray () {
+      return this.number.split(' ')
     }
   },
   data () {

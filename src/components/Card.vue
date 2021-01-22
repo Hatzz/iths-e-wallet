@@ -1,13 +1,13 @@
 <template>
-  <div :class="`card ${vendor}`">
+  <div :class="`card ${card.vendor}`">
     <div class="chip">
       <img
-        :src="require(`../assets/chip-${this.vendorStyles[vendor].chipTone}.svg`)"
+        :src="require(`../assets/chip-${this.vendorStyles[card.vendor].chipTone}.svg`)"
         alt="Card chip"
       />
     </div>
     <div class="vendor">
-      <img :src="require(`../assets/vendor-${vendor}.svg`)" />
+      <img :src="require(`../assets/vendor-${card.vendor}.svg`)" />
     </div>
 
     <div class="card-number">
@@ -17,11 +17,11 @@
     </div>
     <div class="card-holder">
       <h5>CARDHOLDER NAME</h5>
-      <h3>{{ name }}</h3>
+      <h3>{{ card.name }}</h3>
     </div>
     <div class="valid-thru">
       <h5>VALID THRU</h5>
-      <h3>{{ date }}</h3>
+      <h3>{{ card.date }}</h3>
     </div>
   </div>
 </template>
@@ -29,24 +29,13 @@
 <script>
 export default {
   props: {
-    vendor: {
-      type: String,
-      default: 'none'
-    },
-    name: {
-      type: String
-    },
-    date: {
-      type: String
-    },
-    number: {
-      type: String,
-      default: 'XXXX XXXX XXXX XXXX'
+    card: {
+      type: Object
     }
   },
   computed: {
     numberArray () {
-      return this.number.split(' ')
+      return this.card.number.split(' ')
     }
   },
   data () {

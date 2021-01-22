@@ -3,10 +3,7 @@
     <h1>Hello world</h1>
     <Card
       v-for="card in this.$root.cards"
-      :number="card.number"
-      :name="card.name"
-      :date="card.date"
-      :vendor="card.vendor"
+      :card="card"
       :key="card.number"
     />
   </main>

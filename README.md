@@ -34,3 +34,28 @@ Placera arrayen med alla kort i root-komponenten på samma sätt som Mini Librar
 #### Utmaning!
 Lägg även till funktionaliteten att ta bort ett kort genom att lägga till en knapp.
 När man trycker på den knappen ska en bekräftelseruta dyka upp, om man bekräftar så ska kortet raderas.
+
+# iths-e-wallet
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

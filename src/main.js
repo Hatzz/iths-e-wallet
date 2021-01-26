@@ -10,28 +10,28 @@ new Vue({
     return {
       cards: [
         {
-          number: '0451 9583 9837 3321',
+          number: '0451958398373321',
           name: 'Elias Lundgren',
           date: '11/23',
           ccv: '783',
           vendor: 'bitcoin'
         },
         {
-          number: '5823 9457 3291 4097',
+          number: '5823945732914097',
           name: 'Elias Lundgren',
           date: '05/24',
           ccv: '827',
           vendor: 'evil'
         },
         {
-          number: '6634 5018 2123 4567',
+          number: '6634501821234567',
           name: 'Elias Lundgren',
           date: '03/23',
           ccv: '189',
           vendor: 'blockchain'
         },
         {
-          number: '1244 5678 9123 4217',
+          number: '1244567891234217',
           name: 'Elias Lundgren',
           date: '06/21',
           ccv: '133',

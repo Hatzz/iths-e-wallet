@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     numberArray () {
-      return this.card.number.split(' ')
+      return this.card.number.match(/.{1,4}/g) || []
     }
   },
   data () {

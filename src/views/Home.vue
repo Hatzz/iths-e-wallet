@@ -25,6 +25,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  h1, h2 {
+    text-align: center;
+  }
   .active-card {
     margin-bottom: 2rem;
   }

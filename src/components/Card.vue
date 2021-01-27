@@ -21,7 +21,7 @@
     </div>
     <div class="valid-thru">
       <h5>VALID THRU</h5>
-      <h3>{{ card.date }}</h3>
+      <h3>{{ date }}</h3>
     </div>
   </div>
 </template>
@@ -36,6 +36,9 @@ export default {
   computed: {
     numberArray () {
       return this.card.number.match(/.{1,4}/g) || []
+    },
+    date () {
+      return `${this.card.month}/${this.card.year}`
     }
   },
   methods: {

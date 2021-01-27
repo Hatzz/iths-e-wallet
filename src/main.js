@@ -12,28 +12,32 @@ new Vue({
         {
           number: '0451958398373321',
           name: 'Elias Lundgren',
-          date: '11/23',
+          month: '11',
+          year: '23',
           ccv: '783',
           vendor: 'bitcoin'
         },
         {
           number: '5823945732914097',
           name: 'Elias Lundgren',
-          date: '05/24',
+          month: '05',
+          year: '24',
           ccv: '827',
           vendor: 'evil'
         },
         {
           number: '6634501821234567',
           name: 'Elias Lundgren',
-          date: '03/23',
+          month: '03',
+          year: '23',
           ccv: '189',
           vendor: 'blockchain'
         },
         {
           number: '1244567891234217',
           name: 'Elias Lundgren',
-          date: '06/21',
+          month: '06',
+          year: '23',
           ccv: '133',
           vendor: 'ninja'
         }

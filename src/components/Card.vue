@@ -1,5 +1,5 @@
 <template>
-  <div :class="`card ${card.vendor}`">
+  <div :class="`card ${card.vendor}`" @click="selectCard">
     <div class="chip">
       <img
         :src="require(`../assets/chip-${this.vendorStyles[card.vendor].chipTone}.svg`)"
@@ -36,6 +36,11 @@ export default {
   computed: {
     numberArray () {
       return this.card.number.match(/.{1,4}/g) || []
+    }
+  },
+  methods: {
+    selectCard () {
+      this.$emit('click', this.card)
     }
   },
   data () {

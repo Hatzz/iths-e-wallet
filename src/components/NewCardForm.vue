@@ -1,19 +1,20 @@
 <template>
   <form>
-    <label for="number">CARD NUMBER</label>
-    <input type="text" name="number" v-model="card.number" />
-    <label for="name">CARDHOLDER NAME</label>
-    <input type="text" name="name" v-model="card.name" />
-    <label for="month">MONTH</label>
-    <input type="text" name="month" v-model="card.month">
-    <label for="year">YEAR</label>
-    <input type="text" name="year" v-model="card.year">
-    <label for="ccv">CCV</label>
-    <input type="text" name="ccv" v-model="card.ccv">
-    <label for="vendor">Vendor</label>
-    <select name="vendor" v-model="card.vendor">
+    <label class="col-2" for="number">CARD NUMBER</label>
+    <input class="col-2" type="text" name="number" v-model="card.number" />
+    <label class="col-2" for="name">CARDHOLDER NAME</label>
+    <input class="col-2" type="text" name="name" v-model="card.name" />
+    <label class="col-1" for="month">MONTH</label>
+    <label class="col-1" for="year">YEAR</label>
+    <input class="col-1" type="text" name="month" v-model="card.month">
+    <input class="col-1" type="text" name="year" v-model="card.year">
+    <label class="col-2" for="ccv">CCV</label>
+    <input class="col-2" type="text" name="ccv" v-model="card.ccv">
+    <label class="col-2" for="vendor">Vendor</label>
+    <select class="col-2" name="vendor" v-model="card.vendor">
       <option :value="vendor.name" :key="vendor.name" v-for="vendor in vendors">{{ vendor.verboseName }}</option>
     </select>
+    <router-link @click.native="addCard" :to="{name: 'Home'}">ADD CARD</router-link>
   </form>
 </template>
 
@@ -27,7 +28,7 @@ export default {
         month: '',
         year: '',
         ccv: '',
-        vendor: ''
+        vendor: 'none'
       },
       vendors: [
         {
@@ -48,14 +49,33 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    addCard () {
+      this.$root.cards.push(this.card)
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   padding: 1rem;
+  gap: 1rem;
 }
+
+input {
+  font-size: 1rem;
+}
+
+.col-1 {
+  grid-column: auto/span 1;
+}
+
+.col-2 {
+  grid-column: auto/span 2;
+}
+
 </style>

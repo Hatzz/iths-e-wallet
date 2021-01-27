@@ -96,7 +96,7 @@ h5 {
 }
 
 .bitcoin {
-  background: goldenrod;
+  background: linear-gradient(.689turn,hsla(0,0%,100%,.15),hsla(0,0%,100%,0) 99.07%),#ffae34;
   color: black;
 }
 
@@ -105,19 +105,19 @@ h5 {
 }
 
 .none {
-  background: grey;
+  background: linear-gradient(237.75deg,hsla(0,0%,100%,.24),hsla(0,0%,100%,0)),#d0d0d0;
 }
 
 .blockchain {
-  background: purple;
+  background: linear-gradient(248.52deg,rgba(0,0,0,.15) 1.49%,transparent),#8b58f9;
 }
 
 .ninja {
-  background: black;
+  background: linear-gradient(248.3deg,hsla(0,0%,100%,.15),hsla(0,0%,100%,0)),#222;
 }
 
 .evil {
-  background: red;
+  background: linear-gradient(248.3deg,rgba(0,0,0,.16),transparent),#f33355;
 }
 
 .chip,

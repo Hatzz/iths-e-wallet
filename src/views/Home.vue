@@ -37,7 +37,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  h1, h2 {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  h1, h2, a {
     text-align: center;
   }
   .active-card {
@@ -46,5 +50,6 @@ export default {
   .cards {
     display: grid;
     grid-auto-rows: 4rem;
+    margin-bottom: 15rem;
   }
 </style>

@@ -11,6 +11,7 @@
       @click="changeActiveCard(card)"
     />
     </div>
+    <router-link :to="{name: 'NewCard'}">New Card</router-link>
   </main>
 </template>
 

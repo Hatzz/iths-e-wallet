@@ -6,8 +6,7 @@
 
 <style lang="scss" scoped>
 .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: 25rem;
+  margin: 0 auto;
 }
 </style>

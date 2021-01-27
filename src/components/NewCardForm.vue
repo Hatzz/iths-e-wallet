@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @change="$emit('change', card)">
     <label class="col-2" for="number">CARD NUMBER</label>
     <input class="col-2" type="text" name="number" v-model="card.number" />
     <label class="col-2" for="name">CARDHOLDER NAME</label>
@@ -14,7 +14,7 @@
     <select class="col-2" name="vendor" v-model="card.vendor">
       <option :value="vendor.name" :key="vendor.name" v-for="vendor in vendors">{{ vendor.verboseName }}</option>
     </select>
-    <router-link @click.native="addCard" :to="{name: 'Home'}">ADD CARD</router-link>
+    <router-link class="col-2" @click.native="addCard" :to="{name: 'Home'}">ADD CARD</router-link>
   </form>
 </template>
 
@@ -61,13 +61,21 @@ export default {
 <style lang="scss" scoped>
 form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   padding: 1rem;
   gap: 1rem;
 }
 
-input {
-  font-size: 1rem;
+a {
+  text-align: center;
+}
+
+input, select {
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  border: 2px solid grey;
+  text-transform: uppercase;
 }
 
 .col-1 {

@@ -22,7 +22,7 @@ export default {
       this.newCard = card
     },
     goBack () {
-      window.history.back()
+      this.$router.back()
     }
   },
   data () {

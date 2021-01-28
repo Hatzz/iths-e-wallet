@@ -35,15 +35,29 @@ export default {
   },
   computed: {
     numberArray () {
-      return this.card.number.match(/.{1,4}/g) || []
+      const numberLength = this.card.number.length
+      const placeHolderNumber = this.fillPlaceholder(16, numberLength, this.card.number)
+
+      return placeHolderNumber.match(/.{1,4}/g) || []
     },
     date () {
-      return `${this.card.month}/${this.card.year}`
+      const monthLength = this.card.month.length
+      const placeHolderMonth = this.fillPlaceholder(2, monthLength, this.card.month)
+      const yearLength = this.card.year.length
+      const placeHolderYear = this.fillPlaceholder(2, yearLength, this.card.year)
+      return `${placeHolderMonth}/${placeHolderYear}`
     }
   },
   methods: {
     selectCard () {
       this.$emit('click', this.card)
+    },
+    fillPlaceholder (placeholderLength, textLength, text) {
+      let placeHolder = text
+      for (let i = textLength; i < placeholderLength; i++) {
+        placeHolder += 'X'
+      }
+      return placeHolder
     }
   },
   data () {

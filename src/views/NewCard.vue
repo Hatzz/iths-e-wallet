@@ -27,7 +27,7 @@ export default {
         vendor: 'none',
         number: '',
         name: '',
-        cvv: '',
+        ccv: '',
         month: '',
         year: ''
       }

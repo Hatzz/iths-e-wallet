@@ -1,5 +1,6 @@
 <template>
   <main>
+    <img src="../assets/back.svg" class="back" @click="goBack"/>
     <h1>ADD NEW CARD</h1>
     <Card :card="newCard"/>
     <NewCardForm @change="updateNewCard($event)"/>
@@ -19,6 +20,9 @@ export default {
   methods: {
     updateNewCard (card) {
       this.newCard = card
+    },
+    goBack () {
+      window.history.back()
     }
   },
   data () {
@@ -37,7 +41,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
-  text-align: center;
+.back {
+  position: absolute;
+  margin-right: 23rem;
+  margin-top: 1.75rem;
+  width: 1.5rem;
+  cursor: pointer;
 }
 </style>

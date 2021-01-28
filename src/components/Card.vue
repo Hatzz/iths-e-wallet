@@ -17,7 +17,7 @@
     </div>
     <div class="card-holder">
       <h5>CARDHOLDER NAME</h5>
-      <h3>{{ card.name }}</h3>
+      <h3>{{ name }}</h3>
     </div>
     <div class="valid-thru">
       <h5>VALID THRU</h5>
@@ -46,6 +46,11 @@ export default {
       const yearLength = this.card.year.length
       const placeHolderYear = this.fillPlaceholder(2, yearLength, this.card.year)
       return `${placeHolderMonth}/${placeHolderYear}`
+    },
+    name () {
+      const nameLength = this.card.name.length
+      const placeHolderName = this.fillPlaceholder(3, nameLength, this.card.name)
+      return placeHolderName
     }
   },
   methods: {

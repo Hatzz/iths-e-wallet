@@ -7,9 +7,14 @@
 </template>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
 .wrapper {
   max-width: 25rem;
   margin: 0 auto;
+}
+
+html {
+  font-family: PT Mono, monospace
 }
 
 main {

@@ -37,12 +37,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  h1, h2, a {
-    text-align: center;
-  }
-  a {
-    display: block;
-  }
   .active-card {
     margin-bottom: 2rem;
   }

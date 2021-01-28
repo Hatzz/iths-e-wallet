@@ -1,7 +1,7 @@
 <template>
-  <form @change="$emit('change', card)">
+  <form @input="$emit('change', card)">
     <label class="col-2" for="number">CARD NUMBER</label>
-    <input class="col-2" type="text" name="number" v-model="card.number" />
+    <input class="col-2" type="text" name="number" v-model="card.number" maxlength="16" />
     <label class="col-2" for="name">CARDHOLDER NAME</label>
     <input class="col-2" type="text" name="name" v-model="card.name" />
     <label class="col-1" for="month">MONTH</label>
